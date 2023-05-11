@@ -106,7 +106,7 @@ Install VueCLI: https://cli.vuejs.org/guide/installation.html
 5. `VUE_APP_API_BASE_URL` should contain the URL of your Laravel JSON:API Project. (eg. http://localhost:3000/api/v1)
 6. Run `npm run dev` to start the application in a local development environment or npm run build to build release distributables.
 
-## Fully Coded Elements
+## Fully Coded Elements 
 
 Vue Material Dashboard 2 is built with over 70 frontend individual elements, like buttons, inputs, navbars, nav tabs, cards, or alerts, giving you the freedom of choosing and combining. All components can take variations in color, which you can easily modify using sass files. You will save a lot of time going from prototyping to full-functional code because all elements are implemented.
 
@@ -365,7 +365,7 @@ vue-material-dashboard-2
     │   │   └── profile.module.js
     │   ├── views
     │   │   ├── components
-    |   |   ├── examples-api
+    |   |   ├── examples-api 
     |   |   |   ├── profile
     |   |   |   ├── users
     |   |   |   ├── Login.vue
