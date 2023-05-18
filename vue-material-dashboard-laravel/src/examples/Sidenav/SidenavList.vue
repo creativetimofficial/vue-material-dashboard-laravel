@@ -96,7 +96,7 @@
     <div class="sidenav-footer position-absolute w-100 bottom-0">
       <div class="mx-3">
         <a class="btn mt-4 w-100" :class="`bg-gradient-${this.$store.state.color}`"
-          href="https://www.creative-tim.com/product/vue-material-dashboard-2-pro">Upgrade to pro</a>
+          href="https://www.creative-tim.com/product/vue-material-dashboard-laravel-pro?_ga=2.100464214.933780196.1684307546-944306388.1662358829">Upgrade to pro</a>
       </div>
     </div>
   </div>

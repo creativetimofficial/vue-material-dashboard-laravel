@@ -114,7 +114,7 @@
 
         <a
           class="btn btn-outline-dark w-100"
-          href="https://www.creative-tim.com/learning-lab/vue/overview/material-dashboard/"
+          href="https://vue-material-dashboard-laravel-docs.creative-tim.com/vue/overview/material-dashboard/"
           >View documentation</a
         >
         <div class="text-center w-100">

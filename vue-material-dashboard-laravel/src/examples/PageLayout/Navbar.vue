@@ -11,7 +11,7 @@
         v-bind="$attrs"
         :class="isBlur ? 'text-dark' : 'text-white'"
       >
-        Material Dashboard 2
+        Material Dashboard 2 Laravel
       </router-link>
       <button
         class="navbar-toggler shadow-none ms-2"
@@ -78,7 +78,7 @@
         <ul class="navbar-nav d-lg-block d-none">
           <li class="nav-item">
             <a
-              href="https://www.creative-tim.com/product/vue-material-dashboard-2"
+              href="https://www.creative-tim.com/product/vue-material-dashboard-laravel"
               class="btn btn-sm mb-0 me-1 bg-gradient-success" target="_blank"
               >Free download</a
             >
