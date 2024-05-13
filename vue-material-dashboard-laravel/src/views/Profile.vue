@@ -21,8 +21,8 @@
         </div>
         <div class="col-auto my-auto">
           <div class="h-100">
-            <h5 class="mb-1">Richard Davis</h5>
-            <p class="mb-0 font-weight-normal text-sm">CEO / Co-Founder</p>
+            <h5 class="mb-1">Ricardo Gomez</h5>
+            <p class="mb-0 font-weight-normal text-sm">CEO / Administrador</p>
           </div>
         </div>
         <div

@@ -3,21 +3,21 @@
     <ul class="navbar-nav">
 
       <li class="nav-item">
-        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="dashboard" navText="Dashboard">
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="dashboard" navText="Tableros">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">dashboard</i>
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="tables" navText="Tables">
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="tables" navText="Tablas">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">table_view</i>
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="billing" navText="Billing">
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="billing" navText="Cuentas">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">receipt_long</i>
           </template>
@@ -32,7 +32,7 @@
       </li>
       <li class="nav-item">
         <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="notifications"
-          navText="Notifications">
+          navText="Notificaciones">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">notifications</i>
           </template>
@@ -48,14 +48,14 @@
 
       <li class="nav-item">
         <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="user-profile"
-          navText="User Profile">
+          navText="Perfil de modelos">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">person</i>
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="users" navText="Users">
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="users" navText="Modelos">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">people</i>
           </template>
@@ -72,26 +72,62 @@
       </li>
 
       <li class="nav-item">
-        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="profile" navText="Profile">
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="profile" navText="Perfil">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">person</i>
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="sign-in" navText="SignIn">
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="sign-in" navText="Ingresar">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">login</i>
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="sign-up" navText="SignUp">
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="sign-up" navText="Registrase">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">assignment</i>
           </template>
         </sidenav-collapse>
       </li>
+      <!-- Páginas -->
+      <li class="nav-item">
+        <sidenav-collapse url="/paginas" :aria-controls="''" v-bind:collapse="false" collapseRef="paginas" navText="Páginas">
+          <template v-slot:icon>
+            <i class="material-icons-round opacity-10 fs-5">web</i>
+          </template>
+        </sidenav-collapse>
+      </li>
+
+      <!-- Pagos -->
+      <li class="nav-item">
+        <sidenav-collapse url="/pagos" :aria-controls="''" v-bind:collapse="false" collapseRef="pagos" navText="Pagos">
+          <template v-slot:icon>
+            <i class="material-icons-round opacity-10 fs-5">payment</i>
+          </template>
+        </sidenav-collapse>
+      </li>
+
+      <!-- Perfiles -->
+      <li class="nav-item">
+        <sidenav-collapse url="/perfiles" :aria-controls="''" v-bind:collapse="false" collapseRef="perfiles" navText="Perfiles">
+          <template v-slot:icon>
+            <i class="material-icons-round opacity-10 fs-5">assignment_ind</i>
+          </template>
+        </sidenav-collapse>
+      </li>
+
+      <!-- Personas -->
+      <li class="nav-item">
+        <sidenav-collapse url="/personas" :aria-controls="''" v-bind:collapse="false" collapseRef="personas" navText="Personas">
+          <template v-slot:icon>
+            <i class="material-icons-round opacity-10 fs-5">group</i>
+          </template>
+        </sidenav-collapse>
+      </li>
+
     </ul>
     <div class="sidenav-footer position-absolute w-100 bottom-0">
       <div class="mx-3">
