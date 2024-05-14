@@ -1,16 +1,33 @@
 <template>
-  <div>
-    <h1>{{ id ? 'Editar Página' : 'Crear Página' }}</h1>
-    <form @submit.prevent="submitForm">
-      <input v-model="pagina.nombre" placeholder="Nombre de la página" />
-      <input v-model="pagina.moneda" placeholder="Moneda" />
-      <button type="submit">Guardar</button>
-    </form>
+  <div class="py-4 container-fluid">
+    <div class="card">
+      <div class="card-header border-bottom">
+        <div class="d-flex align-items-center justify-content-between">
+          <h5 class="mb-0">{{ id ? 'Editar Página' : 'Crear Página' }}</h5>
+          <material-button class="btn btn-sm" @click="showProMessage()">
+            <i class="fas fa-save me-2"></i>
+            Guardar
+          </material-button>
+        </div>
+      </div>
+      <div class="card-body">
+        <form @submit.prevent="submitForm">
+          <div class="mb-3">
+            <input v-model="pagina.nombre" placeholder="Nombre de la página" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <input v-model="pagina.moneda" placeholder="Moneda" class="form-control" />
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import MaterialButton from "@/components/MaterialButton.vue"; // Asegúrate de tener este componente o adapta el nombre según tu estructura
 
 export default {
   props: {
@@ -18,6 +35,9 @@ export default {
       type: [String, Number],
       default: null
     }
+  },
+  components: {
+    MaterialButton
   },
   data() {
     return {
@@ -53,7 +73,17 @@ export default {
           .catch(error => {
             console.error("There was an error!", error);
           });
+    },
+    showProMessage() {
+      // Aquí deberías definir cómo quieres mostrar el mensaje al guardar, similar al primer componente
+      alert('Guardar página');
     }
   }
 }
 </script>
+
+<style scoped>
+input {
+  margin-bottom: 0.5rem; /* Ajuste para los inputs según prefieras */
+}
+</style>
