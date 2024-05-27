@@ -1,4 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
+import PersonList from "../views/personas/PersonList.vue";
+import PersonForm from "../views/personas/PersonForm.vue";
+import PerfilList from "../views/perfiles/PerfilList.vue";
+import PerfilForm from "../views/perfiles/PerfilForm.vue";
+import PagoList from "../views/pagos/PagoList.vue";
+import PagoForm from "../views/pagos/PagoForm.vue";
+import PaginaList from "../views/paginas/PaginaList.vue";
+import PaginaForm from "../views/paginas/PaginaForm.vue";
 import Dashboard from "../views/Dashboard.vue";
 import Tables from "../views/Tables.vue";
 import Billing from "../views/Billing.vue";
@@ -89,6 +97,70 @@ const routes = [
     path: '/users',
     name: "Users",
     component: Users
+  },
+  {
+    path: "/personas",
+    name: "Personas",
+    component: PersonList,
+  },
+  {
+    path: "/personas/create",
+    name: "CreatePersona",
+    component: PersonForm,
+  },
+  {
+    path: "/personas/edit/:id",
+    name: "EditPersona",
+    component: PersonForm,
+    props: true
+  },
+  {
+    path: "/perfiles",
+    name: "Perfiles",
+    component: PerfilList,
+  },
+  {
+    path: "/perfiles/create",
+    name: "CreatePerfil",
+    component: PerfilForm,
+  },
+  {
+    path: "/perfiles/edit/:id",
+    name: "EditPerfil",
+    component: PerfilForm,
+    props: true
+  },
+  {
+    path: "/pagos",
+    name: "Pagos",
+    component: PagoList,
+  },
+  {
+    path: "/pagos/create",
+    name: "CreatePago",
+    component: PagoForm,
+  },
+  {
+    path: "/pagos/edit/:id",
+    name: "EditPago",
+    component: PagoForm,
+    props: true
+  },
+  {
+    path: "/paginas",
+    name: "Paginas",
+    component: PaginaList,
+  },
+  {
+    path: "/paginas/create",
+    name: "CreatePagina",
+    component: PaginaForm,
+  },
+  {
+    path: "/paginas/edit/:id",
+    name: "EditPagina",
+    component: PaginaForm,
+    props: true
   }
 ];
 

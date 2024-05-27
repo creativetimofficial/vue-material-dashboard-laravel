@@ -24,7 +24,7 @@
           alt="main_logo"
         />
         <span class="ms-2 font-weight-bold text-white"
-          >Material Dashboard 2 Laravel</span
+          >CRM Digital Model Group</span
         >
       </a>
     </div>
