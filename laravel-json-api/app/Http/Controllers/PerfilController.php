@@ -9,32 +9,31 @@ class PerfilController extends Controller
 {
     public function index()
     {
-        $perfiles = Perfil::all();
-        return response()->json($perfiles);
+        return Perfil::with('personas')->get();
+    }
+
+    public function show($id)
+    {
+        return Perfil::with('personas')->findOrFail($id);
     }
 
     public function store(Request $request)
     {
         $perfil = Perfil::create($request->all());
-        return response()->json($perfil, 201);
-    }
-
-    public function show($id)
-    {
-        $perfil = Perfil::findOrFail($id);
-        return response()->json($perfil);
+        return $perfil;
     }
 
     public function update(Request $request, $id)
     {
         $perfil = Perfil::findOrFail($id);
         $perfil->update($request->all());
-        return response()->json($perfil);
+        return $perfil;
     }
 
     public function destroy($id)
     {
-        Perfil::destroy($id);
-        return response()->json(null, 204);
+        $perfil = Perfil::findOrFail($id);
+        $perfil->delete();
+        return response()->noContent();
     }
 }
