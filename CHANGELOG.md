@@ -2,6 +2,9 @@
 
 All notable changes to `Vue Material Dashboard Laravel`  will be documented in this file.
 
+## Version 2.1.0
+- Update to Laravel 11.x
+
 ## Version 2.0.0
 - Vue Material 2 Dashboard Free
 - Bootstrap5
