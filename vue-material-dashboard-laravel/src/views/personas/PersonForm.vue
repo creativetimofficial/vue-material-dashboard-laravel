@@ -34,6 +34,13 @@
         <material-input id="documento" label="Documento" variant="static" v-model:value="person.documento" name="documento" />
         <validation-error :errors="apiValidationErrors.documento" />
       </div>
+      <div class="row mt-5">
+        <label for="perfiles">Perfiles:</label>
+        <select v-model="selectedPerfiles" multiple>
+          <option v-for="perfil in perfiles" :key="perfil.id" :value="perfil.id">{{ perfil.nombre }}</option>
+        </select>
+        <validation-error :errors="apiValidationErrors.perfiles" />
+      </div>
       <div class="button-row d-flex mt-4">
         <material-button type="button" color="dark" variant="gradient" class="ms-auto mb-0" @click="submitForm">Guardar</material-button>
       </div>
@@ -68,8 +75,11 @@ export default {
       person: {
         nombre: '',
         tipo_documento: '',
-        documento: ''
+        documento: '',
+        perfiles: []
       },
+      selectedPerfiles: [],
+      perfiles: [],
       file: null,
       imgSource: 'https://vue-material-dashboard-laravel-pro.creative-tim.com/img/placeholder.jpg',
       loading: null,
@@ -84,6 +94,7 @@ export default {
     }
   },
   mounted() {
+    this.fetchPerfiles();
     if (this.id) {
       this.fetchPerson();
     }
@@ -93,6 +104,16 @@ export default {
       axios.get(`http://localhost:8000/api/v2/personas/${this.id}`)
           .then(response => {
             this.person = response.data;
+            this.selectedPerfiles = this.person.perfiles.map(perfil => perfil.id);
+          })
+          .catch(error => {
+            console.error("There was an error!", error);
+          });
+    },
+    fetchPerfiles() {
+      axios.get('http://localhost:8000/api/v2/perfiles')
+          .then(response => {
+            this.perfiles = response.data;
           })
           .catch(error => {
             console.error("There was an error!", error);
@@ -107,10 +128,15 @@ export default {
       this.person.profile_image = this.imgSource;
     },
     submitForm() {
+      const data = {
+        ...this.person,
+        perfiles: this.selectedPerfiles
+      };
+
       const method = this.id ? 'put' : 'post';
       const url = this.id ? `http://localhost:8000/api/v2/personas/${this.id}` : 'http://localhost:8000/api/v2/personas';
 
-      axios[method](url, this.person)
+      axios[method](url, data)
           .then(() => {
             this.$router.push('/personas');
           })
@@ -126,6 +152,7 @@ export default {
 .multisteps-form__panel {
   padding: 20px;
 }
+
 .button-row {
   justify-content: flex-end;
 }

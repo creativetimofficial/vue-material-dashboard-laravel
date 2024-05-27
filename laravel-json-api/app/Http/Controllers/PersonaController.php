@@ -19,11 +19,20 @@ class PersonaController extends Controller
 
     public function store(Request $request)
     {
-        $persona = Persona::create($request->all());
+        $data = $request->all();
+
+        if ($request->hasFile('profile_image')) {
+            $path = $request->file('profile_image')->store('profile_images', 'public');
+            $data['profile_image'] = $path;
+        }
+
+        $persona = Persona::create($data);
+
         if ($request->has('perfiles')) {
             $persona->perfiles()->sync($request->input('perfiles'));
         }
-        return $persona;
+
+        return response()->json($persona, 201);
     }
 
     public function update(Request $request, $id)

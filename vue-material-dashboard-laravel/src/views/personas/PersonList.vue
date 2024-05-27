@@ -8,6 +8,7 @@
             <h5 class="card-title">{{ person.nombre }}</h5>
             <p class="card-text">Tipo de documento: {{ person.tipo_documento }}</p>
             <p class="card-text">Documento: {{ person.documento }}</p>
+            <p class="card-text" v-for="perfil in person.perfiles" :key="perfil.id">Perfil: {{perfil.nombre}}</p>
             <button class="btn btn-primary" @click="editPerson(person.id)">Editar</button>
             <button class="btn btn-danger" @click="deletePerson(person.id)">Eliminar</button>
           </div>
