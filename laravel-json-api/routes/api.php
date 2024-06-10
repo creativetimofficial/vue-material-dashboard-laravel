@@ -11,6 +11,12 @@ use App\Http\Controllers\Api\V2\Auth\ResetPasswordController;
 use App\Http\Controllers\Api\V2\MeController;
 use LaravelJsonApi\Laravel\Facades\JsonApiRoute;
 use LaravelJsonApi\Laravel\Http\Controllers\JsonApiController;
+use App\Http\Controllers\PersonaController;
+use App\Http\Controllers\PagoController;
+use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\TipoCambioController;
+use App\Http\Controllers\PaginaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +35,16 @@ Route::prefix('v2')->middleware('json.api')->group(function () {
     Route::post('/register', RegisterController::class);
     Route::post('/password-forgot', ForgotPasswordController::class);
     Route::post('/password-reset', ResetPasswordController::class)->name('password.reset');
+    // CRUD Routes for Persona
+    Route::apiResource('personas', PersonaController::class);
+    // CRUD Routes for Perfil
+    Route::apiResource('perfiles', PerfilController::class);
+    // CRUD Routes for Pago
+    Route::apiResource('pagos', PagoController::class);
+    // CRUD Routes for Paginas
+    Route::apiResource('paginas', PaginaController::class);
+    // CRUD Routes for TipoCambio
+    Route::apiResource('tipos-cambio', TipoCambioController::class);
 });
 
 JsonApiRoute::server('v2')->prefix('v2')->resources(function (ResourceRegistrar $server) {

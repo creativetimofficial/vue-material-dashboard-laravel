@@ -2,12 +2,15 @@
     <div class="py-4 container-fluid">
         <div class="mt-4 user">
             <div class="col-12">
+
+              <!--
                 <div class="alert alert-danger text-white">
                     <strong>Add, Edit, Delete features are not functional. This is a
                         PRO feature! Click <a href="https://www.creative-tim.com/live/vue-argon-dashboard-pro-laravel"
                             target="_blank">here</a> to see the PRO product.
                     </strong>
                 </div>
+                -->
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-bottom">
@@ -18,7 +21,7 @@
                             <div class="col-6 text-end">
                                 <material-button class="float-right btn btm-sm" @click="showProMessage()">
                                     <i class="fas fa-user-plus me-2"></i>
-                                    Add User
+                                    Crear modelo
                                 </material-button>
                             </div>
                         </div>
@@ -71,9 +74,10 @@ export default {
     },
     methods: {
         showProMessage() {
+
             showSwal.methods.showSwal({
                 type: "error",
-                message: 'This is a PRO feature.',
+                message: 'Adicionar Modelo',
                 width: 500
             });
         }
